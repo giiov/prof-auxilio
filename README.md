@@ -46,7 +46,7 @@ Exemplo (Laragon):
 C:\laragon\www\professor-auxilio
 
 ### 3️⃣ Criar o Arquivo .env
-na raiz do projeto, crie um arquivo .en, baseado no .env.example
+na raiz do projeto, crie um arquivo .env baseado no .env.example
 
 ### 4️⃣ Acessar o projeto
 Acesse no navegador:
