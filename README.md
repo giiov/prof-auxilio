@@ -37,7 +37,7 @@ Siga os passos para configurar o ambiente (XAMPP, Laragon, WAMP):
 
 ### 1️⃣ Clonar o Repositório
 ```bash
-git clone https://github.com/SEU-USUARIO/professor-auxilio.git
+git clone https://github.com/SEU-USUARIO/prof-auxilio.git
 ```
 
 ### 2️⃣ Mover para o Servidor Local
