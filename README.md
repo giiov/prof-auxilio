@@ -36,8 +36,9 @@ As ferramentas principais incluem:
 Siga os passos para configurar o ambiente (XAMPP, Laragon, WAMP):
 
 ### 1️⃣ Clonar o Repositório
-``bash
+```bash
 git clone https://github.com/SEU-USUARIO/professor-auxilio.git
+```
 
 ### 2️⃣ Mover para o Servidor Local
 Coloque a pasta do projeto dento do diretório do servidor:
@@ -49,7 +50,7 @@ na raiz do projeto, crie um arquivo .en, baseado no .env.example
 
 ### 4️⃣ Acessar o projeto
 Acesse no navegador:
-[text](http://localhost/professor-auxilio)
+[http://localhost/professor-auxilio](http://localhost/professor-auxilio)
 
 ### 📌 Observações Importantes
 * Este projeto não funciona sem as chaves da API Gemini
