@@ -1,0 +1,297 @@
+/* Reset e configurações base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Paleta Professor Auxílio */
+:root {
+    --azul-vivido: #086a88;
+    --azul-escuro: #165e6b;
+    --azure: #218ea1;
+    --azul-marinho: #2ba0b7;
+    --verde-escuro: #0c8c24;
+    --verde-amarelado: #b8d941;
+    --branco: #ffffff;
+    --sombra-suave: 0 4px 12px rgba(8, 106, 136, 0.15);
+    --sombra-forte: 0 8px 24px rgba(8, 106, 136, 0.25);
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #f0fafc 0%, #e6f7fb 100%);
+}
+
+/* Header - Mantendo a classe original */
+header {
+    background: linear-gradient(135deg, var(--azul-vivido) 0%, var(--azul-escuro) 100%);
+    color: white;
+    padding: 20px 15px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: var(--sombra-suave);
+}
+
+header h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 1.6rem;
+}
+
+header i {
+    color: var(--verde-amarelado);
+}
+
+/* Main - Mantendo a classe original */
+main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 25px;
+    background: linear-gradient(135deg, #f8fdfe 0%, #e6f7fb 100%);
+}
+
+/* Messages - Mantendo o ID original */
+#messages {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 900px;
+    margin: 0 auto;
+    color: var(--azul-escuro)
+    ;
+}
+
+/* Message - Mantendo a classe original */
+.message {
+    max-width: 75%;
+    padding: 18px 22px;
+    border-radius: 18px;
+    line-height: 1.5;
+    font-size: 15px;
+    box-shadow: 0 2px 8px rgba(22, 94, 107, 0.1);
+    animation: entradaSuave 0.3s ease;
+    word-wrap: break-word;
+    position: relative;
+}
+
+@keyframes entradaSuave {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Message.user - Mantendo a classe original */
+.message.user {
+    background: linear-gradient(135deg, var(--verde-amarelado) 0%, #c5e74c 100%);
+    color: var(--azul-escuro);
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+    margin-left: auto;
+    font-weight: 500;
+    border: 2px solid rgba(184, 217, 65, 0.3);
+}
+
+/* Message.ai - Mantendo a classe original */
+.message.ai {
+    background: linear-gradient(135deg, var(--branco) 0%, #f5f9ff 100%);
+    border: 2px solid var(--azul-marinho);
+    color: var(--azul-escuro);
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+    margin-right: auto;
+}
+
+/* Footer - Mantendo a classe original */
+footer {
+    display: flex;
+    padding: 20px 25px;
+    gap: 15px;
+    background: var(--branco);
+    border-top: 2px solid var(--azul-marinho);
+    box-shadow: 0 -4px 12px rgba(8, 106, 136, 0.1);
+}
+
+/* Input - Mantendo o seletor original */
+footer input {
+    flex: 1;
+    padding: 16px 20px;
+    border-radius: 30px;
+    border: 2px solid var(--azul-marinho);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--azul-escuro);
+    background: var(--branco);
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 6px rgba(8, 106, 136, 0.1);
+}
+
+footer input:focus {
+    outline: none;
+    border-color: var(--verde-amarelado);
+    box-shadow: 0 0 0 3px rgba(184, 217, 65, 0.2);
+}
+
+footer input::placeholder {
+    color: rgba(22, 94, 107, 0.6);
+    font-weight: 400;
+}
+
+/* Button - Mantendo o seletor original */
+footer button {
+    background: linear-gradient(135deg, var(--azul-marinho) 0%, var(--azure) 100%);
+    color: var(--branco);
+    border: none;
+    padding: 16px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: var(--sombra-suave);
+    min-width: 120px;
+    justify-content: center;
+}
+
+footer button:hover {
+    background: linear-gradient(135deg, var(--azure) 0%, var(--azul-vivido) 100%);
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-forte);
+}
+
+/* Melhorias para Markdown */
+.message * {
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+.message pre {
+    white-space: pre-wrap;
+    overflow-x: auto;
+    max-width: 100%;
+    background: rgba(22, 94, 107, 0.08);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--azul-marinho);
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.message.user pre {
+    background: rgba(184, 217, 65, 0.15);
+    border-color: var(--verde-amarelado);
+}
+
+.message code {
+    background: rgba(184, 217, 65, 0.15);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+}
+
+.message.user code {
+    background: rgba(43, 160, 183, 0.15);
+}
+
+.message img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+    border: 2px solid var(--azul-marinho);
+}
+
+.message.user img {
+    border-color: var(--verde-amarelado);
+}
+
+/* Barra de rolagem personalizada */
+main::-webkit-scrollbar {
+    width: 10px;
+}
+
+main::-webkit-scrollbar-track {
+    background: rgba(8, 106, 136, 0.05);
+    border-radius: 10px;
+}
+
+main::-webkit-scrollbar-thumb {
+    background: var(--azul-marinho);
+    border-radius: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 1.4rem;
+        gap: 10px;
+    }
+    
+    main {
+        padding: 15px;
+    }
+    
+    .message {
+        max-width: 85%;
+        padding: 15px 18px;
+        font-size: 14px;
+    }
+    
+    footer {
+        padding: 15px 20px;
+        gap: 12px;
+    }
+    
+    footer input {
+        padding: 14px 18px;
+        font-size: 14px;
+    }
+    
+    footer button {
+        padding: 14px 22px;
+        min-width: 100px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2rem;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .message {
+        max-width: 90%;
+        padding: 12px 15px;
+    }
+    
+    footer {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    footer button {
+        width: 100%;
+    }
+}

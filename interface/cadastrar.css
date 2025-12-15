@@ -1,0 +1,298 @@
+:root {
+    --cinza-claro: #f5f7fa;
+    --cinza-medio: #e0e5ec;
+    --cinza-escuro: #6b7280;
+    --vermelho-suave: #fecaca;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--azul-marinho) 0%, var(--azul-vivido) 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container-cadastro {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.logo-cabecalho {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo-cabecalho a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--branco);
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.logo-cabecalho img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.titulo-logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    text-align: left;
+}
+
+.linha-superior-logo {
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--verde-amarelado);
+}
+
+.linha-inferior-logo {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.cartao-cadastro {
+    background: var(--branco);
+    border-radius: 15px;
+    padding: 40px 35px;
+    box-shadow: 0 5px 20px rgba(22, 94, 107, 0.1);
+    border: 1px solid var(--azul-marinho);
+    animation: aparecerSuave 0.6s ease-out;
+}
+
+.titulo-cadastro {
+    color: var(--azul-escuro);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.subtitulo-cadastro {
+    color: var(--azul-escuro);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.mensagem-alerta {
+    background: var(--vermelho-suave);
+    color: #991b1b;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #dc2626;
+    font-size: 14px;
+    animation: tremer 0.3s ease;
+}
+
+@keyframes tremer {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.formulario-cadastro {
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-formulario {
+    margin-bottom: 18px;
+}
+
+.grupo-formulario:last-of-type {
+    margin-bottom: 0;
+}
+
+.campo-formulario {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid var(--cinza-medio);
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    background: var(--cinza-claro);
+    box-sizing: border-box;
+}
+
+.campo-formulario::placeholder {
+    color: var(--cinza-escuro);
+    opacity: 0.7;
+}
+
+.campo-formulario:focus {
+    outline: none;
+    border-color: var(--azul-marinho);
+    background: var(--branco);
+    box-shadow: 0 0 0 3px rgba(43, 160, 183, 0.1);
+}
+
+select.campo-formulario {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23165e6b' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+    padding-right: 45px;
+    cursor: pointer;
+}
+
+.titulo-secao {
+    color: var(--azul-escuro);
+    font-size: 1.1rem;
+    margin: 25px 0 15px 0;
+    text-align: left;
+    font-weight: 600;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--cinza-medio);
+}
+
+.titulo-secao:first-of-type {
+    margin-top: 0;
+}
+
+.botao-cadastrar {
+    background: var(--verde-amarelado);
+    color: var(--azul-escuro);
+    border: none;
+    padding: 16px 30px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 25px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(184, 217, 65, 0.4);
+}
+
+.botao-cadastrar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(184, 217, 65, 0.5);
+    background: var(--verde-escuro);
+    color: var(--branco);
+}
+
+.botao-cadastrar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.botao-cadastrar:hover::before {
+    left: 100%;
+}
+
+.botao-cadastrar i {
+    margin-right: 8px;
+}
+
+/* Link para login */
+.link-login {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--cinza-medio);
+    color: var(--cinza-escuro);
+    font-size: 14px;
+}
+
+.link-login a {
+    color: var(--azul-marinho);
+    font-weight: 600;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.link-login a:hover {
+    color: var(--azul-vivido);
+    text-decoration: underline;
+}
+
+.rotulo-campo {
+    display: block;
+    color: var(--azul-escuro);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    margin-left: 2px;
+}
+
+@media (max-width: 576px) {
+    .cartao-cadastro {
+        padding: 30px 25px;
+    }
+    
+    .titulo-cadastro {
+        font-size: 1.6rem;
+    }
+    
+    .subtitulo-cadastro {
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+    
+    .logo-cabecalho a {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .logo-cabecalho img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .grupo-formulario {
+        margin-bottom: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+    
+    .cartao-cadastro {
+        padding: 25px 20px;
+    }
+    
+    .titulo-cadastro {
+        font-size: 1.5rem;
+    }
+    
+    .botao-cadastrar {
+        padding: 15px 20px;
+        font-size: 13px;
+    }
+    
+    .campo-formulario {
+        padding: 13px 14px;
+        font-size: 15px;
+    }
+    
+    .grupo-formulario {
+        margin-bottom: 14px;
+    }
+}

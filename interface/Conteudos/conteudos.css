@@ -1,0 +1,21 @@
+.lista-contuedos {
+}
+
+.lista-linha-conteudos {
+    margin: 1rem 6rem;
+    padding: 1rem;
+    list-style: none;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.link-lista-conteudos {
+    width: 100%;
+    color: var(--azul-escuro);
+    background-color: white;
+    padding: 1rem;
+}
+
+.conteudo-especifico {
+    margin: 1rem 6rem;
+}

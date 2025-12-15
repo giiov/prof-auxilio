@@ -1,0 +1,413 @@
+/* Reset e tipografia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Paleta Professor Auxílio - mesma do style.css */
+    --azul-vivido: #086a88;
+    --azul-escuro: #165e6b;
+    --azure: #218ea1;
+    --azul-marinho: #2ba0b7;
+    --verde-escuro: #0c8c24;
+    --verde-amarelado: #b8d941;
+    --branco: #ffffff;
+    --branco-transparente: rgba(255, 255, 255, 0.1);
+    --preto-transparente: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f0fafc 0%, #e8f7fb 100%);
+    color: var(--azul-escuro);
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Layout principal */
+.container-principal {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header - usando o mesmo estilo do style.css */
+.cabecalho {
+    background-color: var(--azul-vivido);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 100;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.conteudo-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.imagem-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.nome-logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.linha-superior {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--verde-amarelado);
+}
+
+.linha-inferior {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--branco);
+}
+
+/* Conteúdo principal */
+.wrapper-conteudo {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.menu-lateral {
+    width: 280px;
+    background: linear-gradient(180deg, var(--azul-escuro) 0%, var(--azul-vivido) 100%);
+    color: white;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    overflow-y: auto; /* ROLAGEM VERTICAL APENAS AQUI */
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    
+    /* Estilizar a barra de rolagem */
+    scrollbar-width: thin;
+    scrollbar-color: var(--verde-amarelado) var(--branco-transparente);
+    
+    /* Altura máxima para forçar rolagem */
+    max-height: calc(100vh - 80px);
+}
+
+/* Personalizar barra de rolagem para Chrome/Safari */
+.menu-lateral::-webkit-scrollbar {
+    width: 8px;
+}
+
+.menu-lateral::-webkit-scrollbar-track {
+    background: var(--branco-transparente);
+    border-radius: 10px;
+}
+
+.menu-lateral::-webkit-scrollbar-thumb {
+    background-color: var(--verde-amarelado);
+    border-radius: 10px;
+    border: 2px solid var(--branco-transparente);
+}
+
+.menu-lateral h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--verde-amarelado);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-lateral h2 i {
+    font-size: 1.2rem;
+}
+
+/* Grupos de botões */
+.grupo-ferramentas {
+    background: var(--branco-transparente);
+    border-radius: 12px;
+    padding: 18px;
+    backdrop-filter: blur(5px);
+}
+
+.grupo-ferramentas h3 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: var(--verde-amarelado);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.grupo-ferramentas h3 i {
+    font-size: 0.9rem;
+}
+
+/* Botões do menu lateral */
+.botao-menu {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.botao-menu:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateX(5px);
+}
+
+.botao-menu:active {
+    transform: translateX(0);
+}
+
+.botao-menu.primario {
+    background: var(--verde-amarelado);
+    color: var(--azul-escuro);
+    font-weight: 600;
+}
+
+.botao-menu.primario:hover {
+    background: #c5e74c;
+}
+
+.botao-menu.perigo {
+    background: rgba(231, 76, 60, 0.2);
+    color: #ffcccb;
+}
+
+.botao-menu.perigo:hover {
+    background: rgba(231, 76, 60, 0.3);
+}
+
+.botao-menu i {
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* Área do canvas - agora ocupa o resto */
+.container-canvas {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f8fdfe 0%, #e6f7fb 100%);
+}
+
+#canvas {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: auto;
+}
+
+/* Bolhas (nós) - estilo melhorado */
+.bolha {
+    position: absolute;
+    padding: 20px 25px;
+    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+    border: 3px solid var(--azul-marinho);
+    border-radius: 40px;
+    cursor: grab;
+    user-select: none;
+    min-width: 140px;
+    max-width: 300px;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    animation: entradaSuave 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--azul-escuro);
+    box-shadow: 0 5px 15px rgba(8, 106, 136, 0.15);
+    word-wrap: break-word;
+    z-index: 10;
+}
+
+.bolha:hover {
+    box-shadow: 0 8px 25px rgba(8, 106, 136, 0.25);
+    transform: scale(1.02);
+    border-color: var(--azure);
+}
+
+.bolha.selecionada {
+    border-color: var(--verde-escuro) !important;
+    box-shadow: 0 0 20px rgba(12, 140, 36, 0.4);
+    background: linear-gradient(145deg, #f0fff4, #e8f7ec);
+    transform: scale(1.03);
+}
+
+.bolha.arrastando {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(33, 142, 161, 0.5);
+    cursor: grabbing;
+    z-index: 100;
+}
+
+.bolha:focus {
+    outline: 2px solid var(--verde-amarelado);
+    outline-offset: 2px;
+}
+
+/* Modal de ajuda */
+.modal-ajuda {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-width: 500px;
+    width: 90%;
+    display: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.modal-ajuda.ativo {
+    display: block;
+    animation: aparecerModal 0.4s ease;
+}
+
+.modal-ajuda ul,
+.modal-ajuda li {
+    /* Cor para a lista e seus itens */
+    color: var(--azul-escuro)
+    ;
+}
+
+@keyframes aparecerModal {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.overlay-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+.overlay-modal.ativo {
+    display: block;
+}
+
+/* Indicador de status */
+.indicador-status {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--verde-escuro);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    max-width: 300px;
+}
+
+.indicador-status.ativo {
+    opacity: 1;
+}
+
+/* Animações */
+@keyframes entradaSuave {
+    from {
+        transform: scale(0.3) rotate(-5deg);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu-lateral {
+        width: 220px;
+        padding: 15px;
+    }
+    
+    .menu-lateral h2 {
+        font-size: 1.2rem;
+    }
+    
+    .botao-menu {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .bolha {
+        padding: 15px 20px;
+        min-width: 120px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper-conteudo {
+        flex-direction: column;
+    }
+    
+    .menu-lateral {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        order: 2;
+    }
+    
+    .container-canvas {
+        order: 1;
+        height: 70vh;
+    }
+}
